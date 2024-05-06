@@ -1,0 +1,54 @@
+---
+title: "explore"
+output: html_document
+date: "2024-05-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading libraries
+```{r}
+library('dplyr')
+library('leaflet')
+library('RColorBrewer')
+```
+
+
+
+Loading
+```{r}
+data <- read.csv('./data/sterilisations-de-nids-de-goelands-ville-de-lorient.csv', sep = ";", encoding = "utf8")
+colnames(data)
+```
+
+
+
+```{r}
+col_name = 'nid_espece'
+data_map <- data %>% mutate(col_var = !!rlang::sym(col_name))
+
+col_val <- unique(data[[col_name]])
+pal <- colorFactor(c("darkgrey", "brown", "blue", "black" ), domain = c("Argenté", "Brun", "Marin", "ND"))
+pal_gen <- colorFactor(brewer.pal(length(col_val), 'Accent'), domain = col_val)
+
+
+leaflet(data = data_map) %>% addTiles() %>%
+  addCircleMarkers(~long, ~lat, 
+             popup = ~as.character(nid_espece), 
+             label = ~as.character(nid_espece),
+             color = ~pal_gen(col_var),
+             radius = 10
+             )
+
+
+```
+
+
+
+```{r}
+display.brewer.all()
+
+
+```
