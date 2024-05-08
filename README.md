@@ -33,13 +33,13 @@ To run this Shiny app locally, follow these steps:
 ```bash
 git clone https://github.com/your_username/your_repository.git
 ```
-
-2. Install the renv package in R:
+2. Open the project in RStudio or another IDE.
+3. Install the renv package in R:
 ```R
 install.packages('renv')
 ```
 
-3. Load the renv library and upgrade your project's packages:
+4. Load the renv library and upgrade your project's packages:
 ```R
 library(renv)
 renv::upgrade()
@@ -47,13 +47,13 @@ renv::activate()
 renv::restore()
 ```
 
-4. Activate the project's environment and restore the necessary packages:
+5. Activate the project's environment and restore the necessary packages:
 ```R
 renv::activate()
 renv::restore()
 ```
 
-5. Load the Shiny library and run the Shiny app by executing the run_app.R file:
+6. Load the Shiny library and run the Shiny app by executing the run_app.R file:
 ```R
 library(shiny)
 runApp("run_app.R")
