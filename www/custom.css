@@ -16,6 +16,21 @@ body, html, .container-fluid {
   padding: 10px;
   border-radius: 5px; /* Rounded corners */
 }
+
+.leaflet-right-panel {
+  position: absolute;
+  bottom: 125px; /* Adjusted to prevent overlap with slider */
+  right: 20px;
+  width: 241px;
+  height: auto; /* Adjusted for bottom padding and slider */
+  background-color: #ffffff; /* Light mode background color */
+  border-right: 1px solid #ccc;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners */
+}
+
 .leaflet-dropdown-menu {
   position: absolute;
   top: 10px;
@@ -109,4 +124,70 @@ body.dark-mode .leaflet-control-zoom-out{
 
 .dark-mode .irs-single, .dark-mode .irs-from, .dark-mode .irs-to, .dark-mode .irs-slider {
   background: #cccccc;
+}
+
+
+.custom-fluid-row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.custom-fluid-row h3{
+  margin-top: 5px !important;
+  margin-right: 10px !important;
+}
+
+/* flip car for legend */
+.flip-card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  /* Front styling */
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  /* Back styling */
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 12px;
+  padding: 5px;
+  max-width: 90%; /* Limiting the width to fit within the card */
 }

@@ -1,5 +1,6 @@
 library('dplyr')
 library('lubridate')
+import::from(rlang, "sym", "!!")
 
 
 #' Rename Longitudinal and Latitudinal Columns
@@ -65,7 +66,7 @@ filter_valid_coordinates <- function(dataframe) {
 
 
 
-open_goeland_csv <- function(file_path, selected_columns, sep = ';') {
+open_goeland_csv <- function(file_path, label_col, popup_col, sep = ';') {
   # Read CSV file
   data <- read.csv(file_path, stringsAsFactors = FALSE, sep = sep)
 
@@ -73,21 +74,25 @@ open_goeland_csv <- function(file_path, selected_columns, sep = ';') {
   # Rename longitude and latitude columns to lng and lat if they exist
   data <- rename_long_lat_columns(data)
 
-  # filter valide coordinate only
+  # filter valid coordinate only
   data <- filter_valid_coordinates(data)
 
   # Select specified columns using dplyr
   selected_data <- data %>%
-    dplyr::select(selected_columns, 'lng', 'lat', 'annee') %>%
-    dplyr::filter(annee >= 2017 & annee <= lubridate::year(Sys.Date()))%>%
-    dplyr::mutate(annee = as.integer(annee))%>%
+    dplyr::mutate(
+      annee = as.integer(annee),
+      label_col = !!sym(label_col),
+      popup_col = !!sym(popup_col)
+      ) %>%
+    dplyr::select(.data$label_col, .data$popup_col, 'lng', 'lat', 'annee') %>%
+    dplyr::filter(.data$annee >= 2017 & .data$annee <= lubridate::year(Sys.Date()))%>%
     unique()
 
   return(selected_data)
 }
 
 
-open_bigfoot_csv <- function(file_path, selected_columns, sep = ';') {
+open_bigfoot_csv <- function(file_path, label_col, popup_col, sep = ';') {
   # Read CSV file
   data <- read.csv(file_path, stringsAsFactors = FALSE, sep = sep)
 
@@ -99,8 +104,10 @@ open_bigfoot_csv <- function(file_path, selected_columns, sep = ';') {
 
   # Select specified columns using dplyr
   selected_data <- data %>%
-    dplyr::mutate(annee = lubridate::year(timestamp)) %>%
-    dplyr::select(selected_columns, 'lng', 'lat', 'annee') %>%
+    dplyr::mutate(annee = lubridate::year(timestamp),
+                  label_col = !!sym(label_col),
+                  popup_col = !!sym(popup_col)) %>%
+    dplyr::select(.data$label_col, .data$popup_col, 'lng', 'lat', 'annee') %>%
     unique()
 
   return(selected_data)
