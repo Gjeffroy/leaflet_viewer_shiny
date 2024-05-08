@@ -1,4 +1,4 @@
-# Shiny App: Seagull Settlement and Bigfoot Sightings Visualization
+# Shiny App with Leaflet Visualization
 
 This Shiny app allows users to visualize two datasets: Seagull settlements in Lorient and Bigfoot sightings. Users can explore these datasets over time using the animation function of a slider. Additionally, the app clusters data points and shows the density of data points to provide a comprehensive view of the spatial distribution of the phenomena.
 
