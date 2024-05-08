@@ -6,11 +6,6 @@ This Shiny app allows users to visualize two datasets: Seagull settlements in Lo
 
 add gif
 
-## Features
-
-- **Animate Through Time**: Use the slider to animate the passage of time, witnessing the shifting patterns of seagull colonies and Bigfoot encounters.
-- **Clustered Data Points**: Clusters of data points allow for a clearer view of dense areas, providing a more comprehensive understanding of the distribution patterns.
-- **Density Visualization**: Dive deeper into the density of data points with density overlays, revealing hotspots and trends in both seagull and Bigfoot activity.
 
 ## Datasets
 
@@ -59,8 +54,11 @@ library(shiny)
 runApp("run_app.R")
 ```
 
-
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this code for your own purposes.
+
+## Acknowledgments
+
+- Nids de goélands recensés: [https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/](https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/)
+- BFRO Database History and Report Classification System: [https://www.bfro.net/GDB/classify.asp](https://www.bfro.net/GDB/classify.asp)
