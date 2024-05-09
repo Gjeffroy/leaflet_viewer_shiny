@@ -4,8 +4,7 @@ This Shiny app allows users to visualize two datasets: Seagull settlements in Lo
 
 ## Overview
 
-![](https://github.com/Gjeffroy/leaflet_viewer_shiny/blob/main/ShortVidIntro_720.mp4?raw=true)
-
+https://github.com/Gjeffroy/leaflet_viewer_shiny/assets/27559035/e1be5d41-b0a8-4797-bb6c-aed63a897f97
 
 ## Datasets
 
