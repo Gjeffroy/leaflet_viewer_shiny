@@ -34,12 +34,10 @@ git clone https://github.com/Gjeffroy/leaflet_viewer_shiny.git
 install.packages('renv')
 ```
 
-4. Load the renv library and upgrade your project's packages:
+4. Load the renv library and upgrade it to the latest version:
 ```R
 library(renv)
 renv::upgrade()
-renv::activate()
-renv::restore()
 ```
 
 5. Activate the project's environment and restore the necessary packages:
