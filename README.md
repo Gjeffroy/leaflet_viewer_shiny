@@ -26,7 +26,7 @@ To run this Shiny app locally, follow these steps:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/Gjeffroy/leaflet_viewer_shiny.git
 ```
 2. Open the project in RStudio or another IDE.
 3. Install the renv package in R:
