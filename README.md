@@ -52,11 +52,11 @@ library(shiny)
 runApp("run_app.R")
 ```
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this code for your own purposes.
-
 ## Acknowledgments
 
 - Nids de goélands recensés: [https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/](https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/)
 - BFRO Database History and Report Classification System: [https://www.bfro.net/GDB/classify.asp](https://www.bfro.net/GDB/classify.asp)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this code for your own purposes.
