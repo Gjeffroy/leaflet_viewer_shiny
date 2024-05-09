@@ -26,7 +26,7 @@ To run this Shiny app locally, follow these steps:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/Gjeffroy/leaflet_viewer_shiny.git
 ```
 2. Open the project in RStudio or another IDE.
 3. Install the renv package in R:
@@ -34,12 +34,10 @@ git clone https://github.com/your_username/your_repository.git
 install.packages('renv')
 ```
 
-4. Load the renv library and upgrade your project's packages:
+4. Load the renv library and upgrade it to the latest version:
 ```R
 library(renv)
 renv::upgrade()
-renv::activate()
-renv::restore()
 ```
 
 5. Activate the project's environment and restore the necessary packages:
@@ -54,11 +52,11 @@ library(shiny)
 runApp("run_app.R")
 ```
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this code for your own purposes.
-
 ## Acknowledgments
 
 - Nids de goélands recensés: [https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/](https://www.data.gouv.fr/fr/datasets/nids-de-goelands-recenses-ville-de-lorient/)
 - BFRO Database History and Report Classification System: [https://www.bfro.net/GDB/classify.asp](https://www.bfro.net/GDB/classify.asp)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify this code for your own purposes.
