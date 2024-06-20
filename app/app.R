@@ -39,7 +39,7 @@ data3 <- data.frame(
 
 
 
-# Define UI
+# Define UIe
 ui <- fluidPage(
   useShinyjs(),
   tags$head(tags$head(includeCSS("www/custom.css"))),
